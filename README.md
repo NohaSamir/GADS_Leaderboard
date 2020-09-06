@@ -2,6 +2,8 @@
 
 Google Africa Developer Scholarship Phase II 
 
+![Screenshot_1599426917](https://user-images.githubusercontent.com/25500250/92336567-5cc4f000-f0a2-11ea-8d02-e087d267f4c3.png)
+
 ## Description
 
 This project is a very simple Android Project aimed at getting you to implement some simple concepts that are very important as far as Android Development is concerned.
