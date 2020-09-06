@@ -2,7 +2,7 @@
 
 Google Africa Developer Scholarship Phase II 
 
-![Screenshot_1599426917](https://user-images.githubusercontent.com/25500250/92336567-5cc4f000-f0a2-11ea-8d02-e087d267f4c3.png)
+![Screenshot_1599426917](https://user-images.githubusercontent.com/25500250/92336717-dad5c680-f0a3-11ea-8992-d7795d3349fc.png)
 
 ## Description
 
