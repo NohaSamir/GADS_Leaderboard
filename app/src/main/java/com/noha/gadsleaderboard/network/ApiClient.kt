@@ -53,8 +53,7 @@ suspend fun <T> safeApiCall(
 ): ResultWrapper<T> {
     return withContext(dispatcher) {
         try {
-            val response = apiCall.invoke().await()
-            ResultWrapper.Success(response)
+            ResultWrapper.Success(apiCall.invoke().await())
         } catch (throwable: Throwable) {
             when (throwable) {
                 is HttpException -> {

@@ -54,7 +54,7 @@ class PlaceholderFragment : Fragment() {
 
     private fun bindList(view: View, list: ResultWrapper<List<Learner>>) {
         when (list) {
-            is ResultWrapper.Success -> adapter.submitList(list.value)
+            is ResultWrapper.Success -> list.value?.let { adapter.submitList(it) }
             is ResultWrapper.GenericError -> showErrorSnackBar(
                 view,
                 R.string.something_went_wrong

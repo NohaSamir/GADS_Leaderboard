@@ -218,7 +218,7 @@
             android:id="@+id/group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="@{viewModel.showSuccessDialog || viewModel.showConfirmationDialog || viewModel.showConfirmationDialog ? View.GONE :View.VISIBLE}"
+            android:visibility="@{viewModel.showSuccessDialog || viewModel.showFailDialog || viewModel.showConfirmationDialog ? View.GONE :View.VISIBLE}"
             app:constraint_referenced_ids="lastNameEditText,editTextTextEmailAddress,button,firstNameEditText,editTextTextEmailAddress2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

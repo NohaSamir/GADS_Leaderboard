@@ -14,6 +14,7 @@ import androidx.databinding.DataBindingUtil
 import com.google.android.material.snackbar.Snackbar
 import com.noha.gadsleaderboard.R
 import com.noha.gadsleaderboard.databinding.ActivitySubmitBinding
+import com.noha.gadsleaderboard.model.ResultWrapper
 import com.noha.gadsleaderboard.utils.hideKeyboard
 
 class SubmitActivity : AppCompatActivity() {
@@ -48,6 +49,15 @@ class SubmitActivity : AppCompatActivity() {
             showErrorSnackBar(binding.root, it)
         })
 
+        viewModel.submitStatus.observe(this, {
+            viewModel.showConfirmationDialog(false)
+            if (it is ResultWrapper.Success) {
+                viewModel.showSuccessDialog(true)
+            } else {
+                viewModel.showFailDialog(true)
+            }
+        })
+
         binding.backImageButton.setOnClickListener {
             finish()
         }
@@ -74,7 +84,7 @@ class SubmitActivity : AppCompatActivity() {
 
         closeButton.setOnClickListener {
             confirmationAlertDialog?.dismiss()
-            viewModel.confirmationDialogShowed(false)
+            viewModel.showConfirmationDialog(false)
         }
 
         yesButton.setOnClickListener {
@@ -91,6 +101,7 @@ class SubmitActivity : AppCompatActivity() {
         alertDialog.show()
 
         Handler(Looper.getMainLooper()).postDelayed({
+            viewModel.showFailDialog(false)
             alertDialog.dismiss()
         }, 2000)
     }
@@ -105,6 +116,7 @@ class SubmitActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
             alertDialog.dismiss()
+            viewModel.showSuccessDialog(false)
             finish()
         }, 2000)
     }

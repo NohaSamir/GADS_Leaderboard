@@ -1,7 +1,6 @@
 package com.noha.gadsleaderboard.ui.submit
 
 import android.app.Application
-import android.util.Log
 import android.util.Patterns
 import android.webkit.URLUtil
 import androidx.lifecycle.AndroidViewModel
@@ -9,8 +8,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.noha.gadsleaderboard.R
-import com.noha.gadsleaderboard.model.User
 import com.noha.gadsleaderboard.model.ResultWrapper
+import com.noha.gadsleaderboard.model.User
 import com.noha.gadsleaderboard.repository.userRepository
 import kotlinx.coroutines.launch
 
@@ -31,22 +30,15 @@ class SubmitViewModel(application: Application) : AndroidViewModel(application) 
     private val _showFailDialog: MutableLiveData<Boolean> = MutableLiveData(false)
     val showFailDialog: LiveData<Boolean> = _showFailDialog
 
+    private val _submitStatus: MutableLiveData<ResultWrapper<Any>> = MutableLiveData()
+    val submitStatus: LiveData<ResultWrapper<Any>> = _submitStatus
+
 
     fun submit() {
         if (validInput()) {
             if (_showConfirmationDialog.value!!) {
                 viewModelScope.launch {
-                    val result = userRepository.submit(user.value!!)
-                    _showConfirmationDialog.postValue(false)
-
-                    if (result is ResultWrapper.Success) {
-                        _showSuccessDialog.postValue(true)
-                        Log.d("ViewModel " , "Success")
-                    } else
-                    {
-                        _showFailDialog.postValue(true)
-                        Log.d("ViewModel " , "Error")
-                    }
+                    userRepository.submit(user.value!!, _submitStatus)
                 }
             } else {
                 _showConfirmationDialog.value = true
@@ -54,8 +46,16 @@ class SubmitViewModel(application: Application) : AndroidViewModel(application) 
         }
     }
 
-    fun confirmationDialogShowed(isShow: Boolean) {
+    fun showConfirmationDialog(isShow: Boolean) {
         _showConfirmationDialog.value = isShow
+    }
+
+    fun showFailDialog(isShow: Boolean) {
+        _showFailDialog.value = isShow
+    }
+
+    fun showSuccessDialog(isShow: Boolean) {
+        _showSuccessDialog.value = isShow
     }
 
     private fun validInput(): Boolean {
