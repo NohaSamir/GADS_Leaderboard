@@ -1,9 +1,9 @@
 package com.noha.gadsleaderboard.network
 
 import com.google.gson.Gson
-import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.noha.gadsleaderboard.model.ErrorResponse
+import com.noha.gadsleaderboard.model.ResultWrapper
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.withContext

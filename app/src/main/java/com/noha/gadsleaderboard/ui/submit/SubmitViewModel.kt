@@ -10,7 +10,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.noha.gadsleaderboard.R
 import com.noha.gadsleaderboard.model.User
-import com.noha.gadsleaderboard.network.ResultWrapper
+import com.noha.gadsleaderboard.model.ResultWrapper
 import com.noha.gadsleaderboard.repository.userRepository
 import kotlinx.coroutines.launch
 

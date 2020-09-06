@@ -2,7 +2,7 @@ package com.noha.gadsleaderboard.repository
 
 import com.noha.gadsleaderboard.model.Learner
 import com.noha.gadsleaderboard.network.LeadershipAPIs
-import com.noha.gadsleaderboard.network.ResultWrapper
+import com.noha.gadsleaderboard.model.ResultWrapper
 import com.noha.gadsleaderboard.network.leadershipAPIs
 import com.noha.gadsleaderboard.network.safeApiCall
 import kotlinx.coroutines.CoroutineDispatcher

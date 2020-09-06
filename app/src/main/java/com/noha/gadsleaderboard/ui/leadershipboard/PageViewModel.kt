@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.noha.gadsleaderboard.model.Learner
-import com.noha.gadsleaderboard.network.ResultWrapper
+import com.noha.gadsleaderboard.model.ResultWrapper
 import com.noha.gadsleaderboard.repository.leadershipRepository
 import kotlinx.coroutines.launch
 

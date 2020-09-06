@@ -1,7 +1,7 @@
 package com.noha.gadsleaderboard.repository
 
 import com.noha.gadsleaderboard.model.User
-import com.noha.gadsleaderboard.network.ResultWrapper
+import com.noha.gadsleaderboard.model.ResultWrapper
 import com.noha.gadsleaderboard.network.SubmitAPIs
 import com.noha.gadsleaderboard.network.safeApiCall
 import com.noha.gadsleaderboard.network.submitAPI

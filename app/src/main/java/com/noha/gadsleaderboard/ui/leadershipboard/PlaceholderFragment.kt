@@ -1,6 +1,5 @@
 package com.noha.gadsleaderboard.ui.leadershipboard
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +10,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.noha.gadsleaderboard.R
 import com.noha.gadsleaderboard.databinding.FragmentMainBinding
 import com.noha.gadsleaderboard.model.Learner
-import com.noha.gadsleaderboard.network.ResultWrapper
+import com.noha.gadsleaderboard.model.ResultWrapper
 
 /**
  * A placeholder fragment containing a simple view.

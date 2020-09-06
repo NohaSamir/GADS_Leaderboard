@@ -1,6 +1,4 @@
-package com.noha.gadsleaderboard.network
-
-import com.noha.gadsleaderboard.model.ErrorResponse
+package com.noha.gadsleaderboard.model
 
 sealed class ResultWrapper<out T> {
 
